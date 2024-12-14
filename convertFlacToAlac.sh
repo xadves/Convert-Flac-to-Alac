@@ -13,7 +13,6 @@ uuid=$(uuidgen)
 convDir=./$uuid
 
 Help() {
-    echo "This is the help menu"
     echo "Syntax: convertFlacToAlac.sh [-h|d|o|t]"
     echo "h     Display this menu"
     echo "d     Set Flac Directory to Search (Default: $musicDir)"
