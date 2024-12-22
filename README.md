@@ -12,3 +12,4 @@ todo...
 * create unique directory
 * use optargs
 * watch for file conflicts
+* spot files that are not flac

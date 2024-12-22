@@ -31,6 +31,7 @@ while getopts ":hd:o:t:" option; do
             convDir=$OPTARG;;
         t)
             finalTar=true
+            ;;
         /?)
             echo "[!] Invalid Option"
             exit;;
