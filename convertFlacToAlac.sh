@@ -53,8 +53,7 @@ fi
 echo "[*] Looking for Flac files"
 find "$musicDir" -path "$convDir" -prune -o -name "*.flac" -exec ls {} \; -exec cp {} $convDir/. \;
 
-# TODO This number is off by one because header
-fileCount=$(ls -l "$convDir" | wc -l)
+fileCount=$(ls -1 "$convDir" | wc -l)
 
 echo "[*] Converting $fileCount files"
 
@@ -67,7 +66,11 @@ do
 	rm -f "$i"
 done
 
+# TODO Not positive the way I'm testing for this is working the way i expect
 if [ "$finalTar" = true ] ; then
     fileName=$(uuidgen)
+    echo "[*] Tarring up the directory... $fileName.tar.gz"
     tar czf ./$fileName.tar.gz "$convDir"
 fi
+
+echo "[*] Complete!!"
